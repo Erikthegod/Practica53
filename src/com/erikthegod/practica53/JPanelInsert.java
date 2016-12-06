@@ -318,7 +318,7 @@ public class JPanelInsert extends javax.swing.JPanel {
     private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
         try {
             ges.ejercicioBorrar((String) jcbPropi.getSelectedItem());
-            JOptionPane.showMessageDialog(null, "Se ha insertado correctamente");
+            JOptionPane.showMessageDialog(null, "Se ha borrado correctamente");
         } catch (SQLException ex) {
             Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
