@@ -150,7 +150,6 @@ public class GestorBBDD {
         tablas = new ArrayList();
         while (rs.next()) {
             tablas.add(rs.getString(1));
-            System.out.println(rs.getString(1));
         }
         desconectarBBDD();
         return tablas;
