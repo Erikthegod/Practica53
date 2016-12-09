@@ -30,7 +30,6 @@ public class GestorBBDD {
     ArrayList tablas;
 
     public void conectarBBDD() throws SQLException, ClassNotFoundException {
-        String sql = null;//Cadena con la sentencia sql    
         Class.forName("com.mysql.jdbc.Driver");//Carga del driver
         String servidor = "jdbc:mysql://localhost:8889/DatosCoches";
         String user = "root";

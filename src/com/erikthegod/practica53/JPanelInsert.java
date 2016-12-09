@@ -7,8 +7,6 @@ package com.erikthegod.practica53;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,10 +36,8 @@ public class JPanelInsert extends javax.swing.JPanel {
             for (int i = 0; i < dni.size(); i++) {
                 jcbPropi.addItem((String) dni.get(i));
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }
 
@@ -286,10 +282,8 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicio4((String) jcbCombo.getSelectedItem());
             JOptionPane.showMessageDialog(null, "Se ha actualizado correctamente");
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbIncrementarActionPerformed
 
@@ -297,10 +291,8 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicio5(jtfMatricula.getText(), jtfMarca.getText(), Integer.parseInt(jtfPrecio.getText()), (String) jcbComboDni.getSelectedItem());
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente");
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbInsertarActionPerformed
 
@@ -308,10 +300,8 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicio6(jtfDni6.getText(), jtfNombre6.getText(), Integer.parseInt(jtfEdad.getText()));
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente");
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbPropietarioActionPerformed
 
@@ -319,10 +309,8 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicioBorrar((String) jcbPropi.getSelectedItem());
             JOptionPane.showMessageDialog(null, "Se ha borrado correctamente");
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelInsert.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbBorrarActionPerformed
 

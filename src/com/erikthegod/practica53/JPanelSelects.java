@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,10 +34,8 @@ public class JPanelSelects extends javax.swing.JPanel {
             for (int i = 0; i < tablas.size(); i++) {
                 jcbTablas.addItem((String) tablas.get(i));
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }
 
@@ -137,40 +136,32 @@ public class JPanelSelects extends javax.swing.JPanel {
     private void jbDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDisponiblesActionPerformed
         try {
             ges.ejercicio2(jtaSelects);
-        } catch (SQLException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbDisponiblesActionPerformed
 
     private void jbPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPropietariosActionPerformed
         try {
             ges.ejercicio3(jtaSelects);
-        } catch (SQLException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbPropietariosActionPerformed
 
     private void jbBusDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBusDniActionPerformed
         try {
             ges.ejercicioPlus((String) jcbDnis.getSelectedItem(), jtaSelects);
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbBusDniActionPerformed
 
     private void jbInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInfoActionPerformed
         try {
             ges.ejercicio8((String) jcbTablas.getSelectedItem(), jtaSelects);
-        } catch (SQLException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JPanelSelects.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
     }//GEN-LAST:event_jbInfoActionPerformed
 
