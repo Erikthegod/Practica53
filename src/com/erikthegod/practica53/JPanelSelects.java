@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -172,7 +173,7 @@ public class JPanelSelects extends javax.swing.JPanel {
     private javax.swing.JButton jbDisponibles;
     private javax.swing.JButton jbInfo;
     private javax.swing.JButton jbPropietarios;
-    private javax.swing.JComboBox<String> jcbDnis;
+    public static javax.swing.JComboBox<String> jcbDnis;
     private javax.swing.JComboBox<String> jcbTablas;
     private javax.swing.JTextArea jtaSelects;
     // End of variables declaration//GEN-END:variables

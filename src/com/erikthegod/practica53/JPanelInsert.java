@@ -291,6 +291,14 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicio5(jtfMatricula.getText(), jtfMarca.getText(), Integer.parseInt(jtfPrecio.getText()), (String) jcbComboDni.getSelectedItem());
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente");
+
+            matriculas = ges.recogerMatriculas();
+            jcbCombo.removeAllItems();
+
+            for (int i = 0; i < matriculas.size(); i++) {
+                jcbCombo.addItem((String) matriculas.get(i));
+            }
+
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
@@ -300,6 +308,24 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicio6(jtfDni6.getText(), jtfNombre6.getText(), Integer.parseInt(jtfEdad.getText()));
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente");
+            dni = ges.recogerDni();
+            matriculas = ges.recogerMatriculas();
+            jcbCombo.removeAllItems();
+            jcbComboDni.removeAllItems();
+            jcbPropi.removeAllItems();
+            JPanelSelects.jcbDnis.removeAllItems();
+            for (int i = 0; i < matriculas.size(); i++) {
+                jcbCombo.addItem((String) matriculas.get(i));
+            }
+            for (int i = 0; i < dni.size(); i++) {
+                jcbComboDni.addItem((String) dni.get(i));
+            }
+            for (int i = 0; i < dni.size(); i++) {
+                jcbPropi.addItem((String) dni.get(i));
+            }
+            for (int i = 0; i < dni.size(); i++) {
+                JPanelSelects.jcbDnis.addItem((String) dni.get(i));
+            }
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
@@ -309,6 +335,21 @@ public class JPanelInsert extends javax.swing.JPanel {
         try {
             ges.ejercicioBorrar((String) jcbPropi.getSelectedItem());
             JOptionPane.showMessageDialog(null, "Se ha borrado correctamente");
+            dni = ges.recogerDni();
+            jcbComboDni.removeAllItems();
+            jcbPropi.removeAllItems();
+            JPanelSelects.jcbDnis.removeAllItems();
+            for (int i = 0; i < dni.size(); i++) {
+                jcbPropi.addItem((String) dni.get(i));
+                jcbComboDni.addItem((String) dni.get(i));
+                JPanelSelects.jcbDnis.addItem((String) dni.get(i));
+            }
+            matriculas = ges.recogerMatriculas();
+            jcbCombo.removeAllItems();
+
+            for (int i = 0; i < matriculas.size(); i++) {
+                jcbCombo.addItem((String) matriculas.get(i));
+            }
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectar con BBDD");
         }
